@@ -76,18 +76,16 @@ export default {
               </li>
               <li v-else class="list-group-item">No type selected</li>
               <!-- v-if e v-for per techonologies -->
-              <li
-                v-if="project.technologies.name != ''"
-                class="list-group-item"
-              >
+              <li class="list-group-item">
                 <span
                   v-for="technology in project.technologies"
                   class="badge rounded-pill text-bg-success me-2"
-                  >{{ technology.name }}</span
                 >
-              </li>
-              <li v-else class="list-group-item">
-                <span>No technologies selected</span>
+                  {{ technology.name }}
+                  <span v-if="technology.length == 0"
+                    >No techonologies selected</span
+                  ></span
+                >
               </li>
             </ul>
           </div>
@@ -97,9 +95,24 @@ export default {
 
       <!-- pagination -->
       <nav aria-label="Page navigation example">
-        <ul class="pagination">
+        <ul class="pagination d-flex justify-content-center mt-5">
           <li class="page-item">
-            <button class="page-link" href="#">Previous</button>
+            <button
+              class="page-link"
+              @click="getApiProjects(currentPage - 1)"
+              :class="{ disabled: currentPage == 1 }"
+            >
+              Previous
+            </button>
+          </li>
+          <li class="page-item">
+            <button
+              class="page-link"
+              @click="getApiProjects(currentPage + 1)"
+              :class="{ disabled: currentPage == lastPage }"
+            >
+              Next
+            </button>
           </li>
         </ul>
       </nav>
