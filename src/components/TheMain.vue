@@ -7,6 +7,7 @@ export default {
     return {
       projects: [],
       baseUrl: "http://127.0.0.1:8000",
+      contentLength: 200,
       currentPage: 1,
       lastPage: null,
     };
@@ -27,6 +28,13 @@ export default {
           this.currentPage = response.data.results.current_page;
           this.lastPage = response.data.results.last_page;
         });
+    },
+    shorterText(text, description) {
+      if (text && text.length > this.contentLength) {
+        return text.substr(0, this.contentLength) + "...";
+      } else {
+        return description;
+      }
     },
   },
   mounted() {
@@ -58,7 +66,7 @@ export default {
             <div class="card-body">
               <h5 class="card-title">{{ project.title }}</h5>
               <p class="card-text">
-                {{ project.description }}
+                {{ shorterText(project.description, project.description) }}
               </p>
             </div>
             <ul class="list-group list-group-flush">
@@ -86,8 +94,21 @@ export default {
         </div>
         <!-- fine ciclo -->
       </div>
+
+      <!-- pagination -->
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <button class="page-link" href="#">Previous</button>
+          </li>
+        </ul>
+      </nav>
     </div>
   </main>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.my_card {
+  max-height: 500px;
+}
+</style>
