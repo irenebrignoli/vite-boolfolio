@@ -1,9 +1,18 @@
-<script></script>
+<script>
+import TheHeader from "./components/TheHeader.vue";
+import TheMain from "./components/TheMAin.vue";
+
+export default {
+  components: {
+    TheHeader,
+    TheMain,
+  },
+};
+</script>
 
 <template>
-  <div class="container">
-    <h1>Ciao</h1>
-  </div>
+  <TheHeader></TheHeader>
+  <TheMain></TheMain>
 </template>
 
 <style lang="scss">
