@@ -1,1 +1,5 @@
 @import "node_modules/bootstrap/scss/bootstrap";
+
+.ms_viewport-h {
+  height: calc(100vh - 180px);
+}
