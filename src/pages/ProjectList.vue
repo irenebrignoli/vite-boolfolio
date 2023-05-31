@@ -1,6 +1,6 @@
 <script>
 import axios from "axios";
-import TheProject from "./TheProject.vue";
+import TheProject from "../components/TheProject.vue";
 import { store } from "../store";
 
 export default {

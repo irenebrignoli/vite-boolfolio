@@ -1,18 +1,16 @@
 <script>
 import TheHeader from "./components/TheHeader.vue";
-import ProjectList from "./components/ProjectList.vue";
 
 export default {
   components: {
     TheHeader,
-    ProjectList,
   },
 };
 </script>
 
 <template>
   <TheHeader></TheHeader>
-  <ProjectList></ProjectList>
+  <router-view></router-view>
 </template>
 
 <style lang="scss">
