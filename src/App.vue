@@ -1,18 +1,18 @@
 <script>
 import TheHeader from "./components/TheHeader.vue";
-import TheMain from "./components/TheMAin.vue";
+import ProjectList from "./components/ProjectList.vue";
 
 export default {
   components: {
     TheHeader,
-    TheMain,
+    ProjectList,
   },
 };
 </script>
 
 <template>
   <TheHeader></TheHeader>
-  <TheMain></TheMain>
+  <ProjectList></ProjectList>
 </template>
 
 <style lang="scss">
