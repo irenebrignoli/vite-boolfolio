@@ -11,22 +11,22 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      page: TheHome,
+      component: TheHome,
     },
     {
       path: "/contacts",
       name: "contacts",
-      page: Contacts,
+      component: Contacts,
     },
     {
       path: "/projects",
       name: "projects",
-      page: ProjectList,
+      component: ProjectList,
     },
     {
       path: "/projects/:slug",
       name: "single-project",
-      page: SingleProject,
+      component: SingleProject,
     },
   ],
 });

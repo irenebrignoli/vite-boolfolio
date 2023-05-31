@@ -4,6 +4,8 @@ export default {
 };
 </script>
 
-<template></template>
+<template>
+  <h1>ciaone</h1>
+</template>
 
 <style lang="scss" scoped></style>
