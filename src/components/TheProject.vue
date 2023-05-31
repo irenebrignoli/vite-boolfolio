@@ -60,6 +60,14 @@ export default {
           ></span
         >
       </li>
+      <li class="list-group-item">
+        <router-link
+          :to="{ name: 'single-project', params: { slug: project.slug } }"
+          class="btn btn-outline-primary"
+        >
+          Show project
+        </router-link>
+      </li>
     </ul>
   </div>
 </template>

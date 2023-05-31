@@ -1,22 +1,10 @@
 <script>
+import { store } from "../store";
 export default {
   name: "TheHeader",
   data() {
     return {
-      menuLinks: [
-        {
-          label: "Home",
-          routeName: "home",
-        },
-        {
-          label: "Projects",
-          routeName: "projects",
-        },
-        {
-          label: "Contacts",
-          routeName: "contacts",
-        },
-      ],
+      store,
     };
   },
 };
@@ -44,7 +32,7 @@ export default {
       <!-- links -->
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="navbar-nav">
-          <li v-for="link in menuLinks" aria-current="page">
+          <li v-for="link in store.menuLinks" aria-current="page">
             <router-link :to="{ name: link.routeName }" class="nav-link">
               {{ link.label }}
             </router-link>
