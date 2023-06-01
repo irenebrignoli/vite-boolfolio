@@ -51,24 +51,21 @@ export default {
 
         <!-- v-if per type -->
         <li v-if="project.type" class="list-group-item">
-          Type: {{ project.type.name }}
+          {{ project.type.name }}
         </li>
-        <li v-else class="list-group-item">Type: No type selected</li>
+        <li v-else class="list-group-item">No type selected</li>
 
         <!-- v-if e v-for per techonologies -->
-        <li class="list-group-item">
-          <div class="mb-2">Technologies:</div>
+        <li v-if="project.technologies.length != 0" class="list-group-item">
           <span
             v-for="technology in project.technologies"
             class="badge rounded-pill text-bg-success me-2"
           >
             {{ technology.name }}
-            <span v-if="technology.length == 0"
-              >No techonologies selected</span
-            ></span
-          >
+          </span>
         </li>
-        <li class="list-group-item mt-3">
+        <li v-else class="list-group-item">No technologies selected</li>
+        <li class="list-group-item mt-3 mb-4">
           <router-link
             :to="{ name: store.menuLinks[1].routeName }"
             class="btn btn-primary"

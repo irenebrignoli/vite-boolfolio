@@ -48,7 +48,7 @@ export default {
       <div v-if="loading == false" v-for="project in projects" class="col-3">
         <TheProject :project="project"></TheProject>
       </div>
-      <div v-else class="ms_viewport-h d-flex gap-3 justify-content-center">
+      <div v-else class="ms_viewport-h d-flex gap-5 justify-content-center">
         <div class="spinner-grow text-primary" role="status"></div>
         <div class="spinner-grow text-primary" role="status"></div>
         <div class="spinner-grow text-primary" role="status"></div>
