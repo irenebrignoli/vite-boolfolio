@@ -29,6 +29,7 @@ export default {
           this.projects = response.data.results.data;
           this.currentPage = response.data.results.current_page;
           this.lastPage = response.data.results.last_page;
+          this.loading = false;
         });
     },
   },
@@ -44,8 +45,14 @@ export default {
     <h1 class="text-center mb-5">Projects</h1>
     <div class="row justify-content-center g-5">
       <!-- importo le card con v-for -->
-      <div v-for="project in projects" class="col-3">
+      <div v-if="loading == false" v-for="project in projects" class="col-3">
         <TheProject :project="project"></TheProject>
+      </div>
+      <div v-else class="ms_viewport-h d-flex gap-3 justify-content-center">
+        <div class="spinner-grow text-primary" role="status"></div>
+        <div class="spinner-grow text-primary" role="status"></div>
+        <div class="spinner-grow text-primary" role="status"></div>
+        <div class="spinner-grow text-primary" role="status"></div>
       </div>
       <!-- fine ciclo -->
     </div>
