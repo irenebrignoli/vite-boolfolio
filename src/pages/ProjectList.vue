@@ -62,6 +62,21 @@ export default {
             Previous
           </button>
         </li>
+
+        <li
+          v-for="page in lastPage"
+          :class="{ active: page == currentPage }"
+          class="page-item"
+        >
+          <button
+            class="page-link"
+            @click="getApiProjects(page)"
+            :class="{ 'page-link': true }"
+          >
+            {{ page }}
+          </button>
+        </li>
+
         <li class="page-item">
           <button
             class="page-link"
