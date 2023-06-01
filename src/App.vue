@@ -12,7 +12,11 @@ export default {
 
 <template>
   <TheHeader></TheHeader>
-  <router-view> </router-view>
+
+  <main class="ms_viewport-h">
+    <router-view></router-view>
+  </main>
+
   <TheFooter></TheFooter>
 </template>
 

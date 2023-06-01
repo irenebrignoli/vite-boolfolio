@@ -5,10 +5,8 @@ export default {
 </script>
 
 <template>
-  <div
-    class="ms_viewport-h d-flex flex-column align-content-center align-items-center"
-  >
-    <h1 class="text-center mt-5">Contact us</h1>
+  <div class="d-flex flex-column align-content-center align-items-center">
+    <h1 class="text-center my-5">Contact us</h1>
     <!-- example form -->
     <form class="w-75 m-auto">
       <div class="mb-3">

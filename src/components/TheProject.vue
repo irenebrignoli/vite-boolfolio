@@ -49,17 +49,15 @@ export default {
       </li>
       <li v-else class="list-group-item">No type selected</li>
       <!-- v-if e v-for per techonologies -->
-      <li class="list-group-item">
+      <li v-if="project.technologies.length != 0" class="list-group-item">
         <span
           v-for="technology in project.technologies"
           class="badge rounded-pill text-bg-success me-2"
         >
           {{ technology.name }}
-          <span v-if="technology.length == 0"
-            >No techonologies selected</span
-          ></span
-        >
+        </span>
       </li>
+      <li v-else class="list-group-item">No technologies selected</li>
       <li class="list-group-item">
         <router-link
           :to="{ name: 'single-project', params: { slug: project.slug } }"
@@ -72,4 +70,9 @@ export default {
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+img {
+  height: 200px;
+  object-fit: cover;
+}
+</style>
